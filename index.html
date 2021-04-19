@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--OS REQUISITOS ESPECÍFICOS:
+        jQuery Scroll suave - HTML Index - linha 56 a 58. Arquivo JS externo - linha 3 a linha 21;
+        Validação de CNPJ - Página "form.html" (Agende sua coleta) - Arquivo JS externo - linha 184 a 256;
+        FOOTER em CSS - HTML Index - linha 133 a 142 - Arquivo CSS extermo - 136 a 162;
+        Aside HTML - Index - linha 103 a 126;
+        Articles HTML - Página "quem-somos.html" (Sobre nós) - linha 117 a 156 (usado múltiplos articles);
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Prolab</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="font/css/all.css">
+    <script src="jquery.script/jquery-3.6.0.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body class="lead">
+    <!--NAVBAR-->
+        <header id="cabecalho" class="mb-1">
+            <nav class="navbar navbar-expand-lg">
+                <a href="index.html" class="navbar-brand"><img src="imgs/logo-banner.png" id="logo"></a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao3">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars menuHamburguer"></i></span>
+                </button>
+                <div id="navegacao3" class="collapse text-right navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html"class="nav-link active">Home</a>
+                        </li>
+                        <li  class="nav-item">
+                            <a href="quem-somos.html" class="nav-link">Sobre nós</a>
+                        </li>
+                        <li  class="nav-item dropdown">
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Serviços</a>
+                            <div class="dropdown-menu mt-3">
+                                <a href="form.html" class="dropdown-item item-menu">Agende sua coleta</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="exame.html" class="dropdown-item item-menu">Acesse seu exame</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Pesquise">
+                            <div class="input-group-append">
+                                <button id="searchbtn" class="btn input-group-text"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <!--SCROLL SUAVE PARA O TOPO-->
+        <a href="#cabecalho" class="scroll">
+            <div id="botaoScroll" class="mr-2" title="Retorne ao topo"><i id="seta" class="fas fa-arrow-up"></i></div>
+        </a>
+        <!--FIM SCROLL SUAVE PARA O TOPO-->
+        <!--FIM NAV BAR-->
+        <!--BANNER-->
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="banner">
+                    <div class="banner-text"><img src="imgs/logo-banner.png" id="banner-img"class="img-fluid img-thumbnail" style="min-height: fit-content; max-height: 25vh;" alt="ProLab"><br>
+                        <button type="button" class="btn btn-lg btn-success mt-5"><a href="https://api.whatsapp.com/message/5Y67HF2JSJW3I1" target="_ablank">Fale conosco <a href="https://api.whatsapp.com/message/5Y67HF2JSJW3I1" target="_blank"><i class="fab fa-whatsapp" id="zap"></i></a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FIM BANNER-->
+        <!--CONTEÚDO-->
+        <div class="container-fluid">
+        <div class="row text-justify">
+            <div class="col-lg-9 p-5">
+                <h1 class="display-4 pl-5" style="font-weight: 350;">Nosso trabalho</h1>
+                <hr style="width: 40%; margin-left: 3%;">
+                <p class="my-3 px-5 texto">Temos absoluto comprometimento com segurança de coleta e qualidade de resultados. Nosso propósito é garantir que nossos pacientes tenham atendimento humanizado, agilidade na liberação de laudos e, principalmente, excelência em resultados.</p>
+                <div class="my-3 px-5">
+                    <h4 class="lead pt-3 exames-populares">Exames mais buscados:</h4>
+                    <ul class="lead py-4">
+                        <li class="servicos"><span> Sorologia para COVID-19 (IgM/IgG)</span></li>
+                        <li class="servicos"><span>Hemograma completo</span></li>
+                        <li class="servicos"><span>Glicose</span></li>
+                        <li class="servicos"><span>Colesterol</span></li>
+                        <li class="servicos"><span>Triglicerídeos</span></li>
+                        <li class="servicos"><span>Teste do pezinho</span></li>
+                        <li class="servicos"><span>Hepatite</span></li>
+                        <li class="servicos"><span>HIV</span></li>
+                        <li class="servicos"><span>Prevenção de colo do útero</span></li>
+                        <li class="servicos"><span>Sumário de urina</span></li>
+                        <li class="servicos"><span>Parasitológico de fezes</span:></li>
+                        <li class="servicos"><span>Tóxicológico</span></li>
+                        <li class="servicos"><span>DNA</span></li>
+                    </ul>
+                    <p class="pt-3 texto ">Trabalhamos também com diversos <b>exames específicos</b> além dos citados acima. Consulte seu médico para verificar qual é a sua necessidade e entre em contato. <br>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 px-2">
+                <aside class="text-justify p-5">
+                    <h4>Certifique-se para seus exames:</h4>
+                    <ul class="list-unstyled aside">
+                        <li>
+                            <i class="fas fa-apple-alt p-2 text-primary"></i> Que seu período de jejum está apropriado para a coleta.
+                        </li>
+                        <li>
+                            <i class="fas fa-dumbbell text-primary p-2"></i>Que você não realizou exercícios pesados nas últimas 24 horas.
+                        </li>
+                        <li> 
+                            <i class="far fa-clock text-primary p-2"></i> Que terá disponibilidade para permanência de até 2h30m no laboratório para a coleta, se necessário.
+                        </li>
+                        <li>
+                            <i class="fas fa-head-side-mask p-2 text-primary"></i> Que você está seguindo as medidas protetivas adequadas contra o COVID-19.
+                        </li>
+                        <li>
+                            <i class="fas fa-syringe text-primary p-2"></i> Que você está ciente do protocolo para coleta do seu exame.
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt text-primary p-2"></i>Que você tem um contato de emergência informado.
+                        </li>
+                    </ul>
+                    <h5 class="py-5">Caso algum item não esteja claro, entre em contato com nossa equipe para mais informações.</h5>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <!--FIM CONTEÚDO-->
+    <!--FOOTER-->
+        <div class="row">
+            <div class="col-lg-12">
+                <footer>
+                    <div class="conteudo">
+                        <p>Laboratório Prolab &copy | All Rights Reserved </p>
+                        <ul>
+                            <li><a href="https://api.whatsapp.com/message/5Y67HF2JSJW3I1" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="https://www.instagram.com/laboratorioprolabubj/" target="_ablank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/Laborat%C3%B3rio-Prolab-Ubajara-114600763661039" target="_ablank"><i class="fab fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!--FINAL FOOTER-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </div>
+</body>
+</html>

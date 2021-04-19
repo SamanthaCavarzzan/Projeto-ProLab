@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--OS REQUISITOS ESPECÍFICOS:
+        jQuery Scroll suave - HTML Index - linha 56 a 58. Arquivo JS externo - linha 3 a linha 21;
+        Validação de CNPJ - Página "form.html" (Agende sua coleta) - Arquivo JS externo - linha 184 a 256;
+        FOOTER em CSS - HTML Index - linha 133 a 142 - Arquivo CSS extermo - 136 a 162;
+        Aside HTML - Index - linha 103 a 126;
+        Articles HTML - Página "quem-somos.html" (Sobre nós) - linha 117 a 156 (usado múltiplos articles);
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Prolab - Resultados</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="font/css/all.css">
+    <script src="jquery.script/jquery-3.6.0.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.invalido').hide();
+            $('.valido').hide();
+            $('#botaoLaudo').click(function(){
+                var chave = $('#chave').val();
+                var senha = $('#senha').val();
+                if(senha.length < 1 || chave.length < 1){
+                    $('#senha').css({'border':'solid 1px red'});
+                    $('#chave').css({'border':'solid 1px red'});
+                    $('.invalido').show();
+                    $('.valido').hide();
+
+                }else {
+                    $('#senha').css({'border':'solid 1px green'});
+                    $('#chave').css({'border':'solid 1px green'});
+                    $('.invalido').hide();
+                    $('.valido').show(); 
+                }
+            });
+        });
+    </script>
+</head>
+<body class="lead">
+    <!--NAVBAR-->
+        <header id="cabecalho">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a href="index.html" class="navbar-brand"><img src="imgs/logo-banner.png" id="logo"></a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao3">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars menuHamburguer"></i></span>
+                </button>
+                <div id="navegacao3" class="collapse text-right navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html"class="nav-link active">Home</a>
+                        </li>
+                        <li  class="nav-item">
+                            <a href="quem-somos.html" class="nav-link">Sobre nós</a>
+                        </li>
+                        <li  class="nav-item dropdown">
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Serviços</a>
+                            <div class="dropdown-menu mt-3">
+                                <a href="form.html" class="dropdown-item item-menu">Agende sua coleta</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="exame.html" class="dropdown-item item-menu">Acesse seu exame</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Pesquise">
+                            <div class="input-group-append">
+                                <button id="searchbtn" class="btn input-group-text"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <!--SCROLL SUAVE PARA O TOPO-->
+        <a href="#cabecalho" class="scroll">
+            <div id="botaoScroll" class="mr-2" title="Retorne ao topo"><i id="seta" class="fas fa-arrow-up"></i></div>
+        </a>
+        <!--FIM SCROLL SUAVE PARA O TOPO-->
+        <!--FIM NAV BAR-->
+        <!--BANNER-->
+        <div class="container-fluid exame-row">
+        <div class="all">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                    <div class="my-5"><img src="imgs/logo-banner.png" class="img-fluid img-thumbnail" style="min-height: fit-content; max-height: 25vh;" alt="ProLab"><br></div>
+            </div>
+        </div>
+        <!--FINAL BANNER-->
+        
+            <div class="row ">
+                <div class="col-lg-12">
+                    <fieldset class="p-5 mb-5 fieldset">
+                        <h1 class="text-center pb-5">Acesse seu resultado</h1>
+                        <form>
+                            <div class="input-group my-3">
+                                <div class="input-group-prepend">
+                                    <label for="chave" class="input-group-text">Chave</label>
+                                </div>
+                                <input type="text" id="chave" class="form-control formulario" placeholder="...">
+                            </div>
+                            <div class="input-group my-3">
+                                <div class="input-group-prepend">
+                                    <label for="senha" class="input-group-text">Senha</label>
+                                </div>
+                                <input type="text" id="senha" class="form-control formulario" placeholder="...">
+                            </div>
+                         
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" type="button">Você é</label>
+                                  </div>
+                                <select class="custom-select seletor">
+                                    <option selected value="selecao" class="selecionado">Selecione</option>
+                                    <option value="0" class="opcao">Paciente</option>
+                                    <option value="1" class="opcao">Médico</option>
+                                    <option value="2" class="opcao">Convênio</option>
+                                    <option value="3" class="opcao">Unidade</option>
+                                    <option value="4" class="opcao">Local</option>
+                                </select>
+                                </div>
+                                <span class="invalido"><small>Você possui campos com valores inválidos.<br><br></small></span>
+                                <span class="valido"><small>Você será redirecionado em seguida.<br><br></small></span>
+                                <button type="button" id="botaoLaudo" class="btn btn-outline-primary" >Enviar</button>
+                        </form>
+                        
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!--FOOTER-->
+        <div class="row">
+            <div class="col-lg-12">
+                <footer>
+                    <div class="conteudo">
+                        <p>Laboratório Prolab &copy | All Rights Reserved </p>
+                        <ul>
+                            <li><a href="https://api.whatsapp.com/message/5Y67HF2JSJW3I1" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="https://www.instagram.com/laboratorioprolabubj/" target="_ablank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/Laborat%C3%B3rio-Prolab-Ubajara-114600763661039" target="_ablank"><i class="fab fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!--FINAL FOOTER-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </div>
+</body>
+</html>

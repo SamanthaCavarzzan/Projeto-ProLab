@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--OS REQUISITOS ESPECÍFICOS:
+        jQuery Scroll suave - HTML Index - linha 56 a 58. Arquivo JS externo - linha 3 a linha 21;
+        Validação de CNPJ - Página "form.html" (Agende sua coleta) - Arquivo JS externo - linha 184 a 256;
+        FOOTER em CSS - HTML Index - linha 133 a 142 - Arquivo CSS extermo - 136 a 162;
+        Aside HTML - Index - linha 103 a 126;
+        Articles HTML - Página "quem-somos.html" (Sobre nós) - linha 117 a 156 (usado múltiplos articles);
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Prolab - Agendamento</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="font/css/all.css">
+    <script src="jquery.script/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body class="lead">
+    <!--NAVBAR-->
+        <header id="cabecalho">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a href="index.html" class="navbar-brand"><img src="imgs/logo-banner.png" id="logo"></a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao3">
+                    <span class="navbar-toggler-icon"><i class="fas fa-bars menuHamburguer"></i></span>
+                </button>
+                <div id="navegacao3" class="collapse text-right navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="index.html"class="nav-link active">Home</a>
+                        </li>
+                        <li  class="nav-item">
+                            <a href="quem-somos.html" class="nav-link">Sobre nós</a>
+                        </li>
+                        <li  class="nav-item dropdown">
+                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Serviços</a>
+                            <div class="dropdown-menu mt-3">
+                                <a href="form.html" class="dropdown-item item-menu">Agende sua coleta</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="exame.html" class="dropdown-item item-menu">Acesse seu exame</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Pesquise">
+                            <div class="input-group-append">
+                                <button id="searchbtn" class="btn input-group-text"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <!--SCROLL SUAVE PARA O TOPO-->
+        <a href="#cabecalho" class="scroll">
+            <div id="botaoScroll" class="mr-2" title="Retorne ao topo"><i id="seta" class="fas fa-arrow-up"></i></div>
+        </a>
+        <!--FIM SCROLL SUAVE PARA O TOPO-->
+        <!--FIM NAV BAR-->
+        <!--BANNER-->
+        <div class="container-fluid agendamento">
+            <div class="all">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                            <div class="my-5"><img src="imgs/logo-banner.png" class="img-fluid img-thumbnail" style="min-height: fit-content; max-height: 25vh;" alt="ProLab"><br></div>
+                    </div>
+                </div>
+        <!--FINAL BANNER-->
+            <div class="row">
+                <div class="col-lg-12 mb-5">
+                    <fieldset class="p-5 mb-5 fieldset">
+                        <h1 class="lead text-center pb-5">Solicite seu agendamento</h1>
+                        <form>
+                            <div class="input-group my-3 pessoaFeJ">
+                                Você gostaria de solicitar seu agendamento como pessoa física ou jurídica? * <br>
+                                <div class="input-group-prepend inputTipo1">
+                                    <label for="tipo" id="tipoDoTipo" class="input-group-text">Tipo</label>
+                                </div>
+                                <select id="tipo" class="custom-select seletor tipoPessoa">
+                                    <option value="nulo" selected class="opcao">Selecione</option>
+                                    <option value="f"  class="opcao">Física</option>
+                                    <option value="j" class="opcao">Jurídica</option>
+                                </select>
+                            </div>
+                            <div class="pessoaFisica">
+                                <div class="input-group my-3 nomePF">
+                                    <div class="input-group-prepend">
+                                        <label for="nome" class="input-group-text">Nome completo</label>
+                                    </div>
+                                    <input type="text" id="nome" class="form-control formulario" placeholder="...">
+                                    <button type="button" id="proximo0" class="btn btn-outline-primary">Próximo</button>
+                                </div>
+                                <div class="input-group my-3 cpfDiv">
+                                    <div class="input-group-prepend">
+                                        <label for="cpf" class="input-group-text">CPF</label>
+                                    </div>
+                                    <input type="text" id="cpf" class="form-control formulario" placeholder="Apenas números">
+                                    <button type="button" id="proximo1" class="btn btn-outline-primary">Próximo</button>
+                                </div>
+                                <div class="input-group my-3 tel1Div">
+                                    <div class="input-group-prepend">
+                                        <label for="telefone" class="input-group-text">Telefone</label>
+                                    </div>
+                                    <input type="text" id="telefone" class="form-control formulario" placeholder="Apenas números" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                                    <button type="button" id="proximo2" class="btn btn-outline-primary">Próximo</button>
+                                </div>
+                                <div class="input-group my-3 cep1Div">
+                                    <div class="input-group-prepend">
+                                        <label for="cep" class="input-group-text">CEP</label>
+                                    </div>
+                                    <input type="text" class="form-control" id="cep" placeholder="Apenas números"> 
+                                    <button type="button" id="proximo3" class="btn btn-outline-primary" title="Preencha o formulário para dar sequência">Próximo</button>
+                                </div>
+                                
+                                <button type="button" id="botaoSeguir" class="btn btn-outline-primary" title="Preencha o formulário para dar sequência">Próximo</button>
+                            </div>
+                            <div class="pessoaJuridica">
+                                <div class="input-group my-3 nomePJ">
+                                    <div class="input-group-prepend">
+                                        <label for="nome2" class="input-group-text" >Nome/Razão Social</label>
+                                    </div>
+                                    <input type="text" id="nome2" class="form-control formulario" placeholder="...">
+                                    <button type="button" id="proximo4" class="btn btn-outline-primary">Próximo</button>
+                                </div>
+                                <div class="input-group my-3 cnpjDiv">
+                                    <div class="input-group-prepend">
+                                        <label for="cnpj" class="input-group-text">CNPJ</label>
+                                    </div>
+                                    <input type="text" id="cnpjInput" class="form-control formulario" placeholder="Apenas números">
+                                    <button type="button" id="proximo5" class="btn btn-outline-primary">Próximo</button>
+                                </div>
+                                <div class="input-group my-3 tel2Div">
+                                    <div class="input-group-prepend">
+                                        <label for="telefone2" class="input-group-text">Telefone</label>
+                                    </div>
+                                    <input type="text" id="telefone2" class="form-control formulario" placeholder="Apenas números" pattern="\([0-9]{2}\)[0-9]{4,6}-[0-9]{3,4}$">
+                                    <button type="button" id="proximo6" class="btn btn-outline-primary">Próximo</button>
+                                </div>
+                                <div class="input-group my-3 cep2Div">
+                                    <div class="input-group-prepend">
+                                        <label for="cep2" class="input-group-text">CEP</label>
+                                    </div>
+                                    <input type="text" class="form-control" id="cep2" placeholder="Apenas números"> 
+                                    <button type="button" id="proximo7" class="btn btn-outline-primary" title="Preencha o formulário para dar sequência">Próximo</button>
+                                </div>
+                                <button type="button" id="botaoSeguir2" class="btn btn-outline-primary" title="Preencha o formulário para dar sequência">Próximo</button>
+                            </div>
+
+                            <div class="tipoColeta">
+                                Deseja realizar sua coleta no laboratório ou domicílio? *<br>
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text">Tipo de Coleta</label>
+                                    </div>
+                                    <select class="custom-select seletor ondeColetar">
+                                        <option value="selecionar0" class="opcao">Selecione</option>
+                                        <option value="cabine" class="opcao">Cabine</option>
+                                        <option value="domicilio" class="opcao">Domicílio</option>
+                                    </select>
+                                    <div class="enderecoDiv">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <label for="endereco" class="input-group-text">Endereço</label>
+                                            </div>
+                                            <input type="text" class="form-control"  id="endereco" placeholder="Ex: Rua Tal"> 
+                                        </div>
+                                    </div>
+                                    <button type="button" id="proximo8" class="btn btn-outline-primary" >Próximo</button>
+                                </div>
+                            </div>
+                            <div class="dia">
+                                Selecione o dia que deseja realizar seu exame: *<br>
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text">Dia</label>
+                                    </div>
+                                    <select class="custom-select seletor diaSemana">
+                                        <option value="selecionar" class="opcao">Selecione</option>
+                                        <option value="0" class="opcao">Segunda-feira</option>
+                                        <option value="1" class="opcao">Terça-feira</option>
+                                        <option value="2" class="opcao">Quarta-feira</option>
+                                        <option value="3" class="opcao">Quinta-feira</option>
+                                        <option value="4" class="opcao">Sexta-feira</option>
+                                        <option value="5" class="opcao">Sábado</option>
+                                    </select>
+                                </div>
+                            </div>
+                                <div class="horarioColeta">
+                                    Selecione o horário em que deseja realizar sua coleta: *<br>
+                                    <div class="input-group my-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text">Horário</label>
+                                        </div>
+                                        <select class="custom-select seletor horario">
+                                            <option value="selecionar" selected class="opcao">Selecione</option>
+                                            <option value="6" class="opcao">6h</option>
+                                            <option value="7" class="opcao">7h</option>
+                                            <option value="8" class="opcao">8h</option>
+                                            <option value="9" class="opcao">9h</option>
+                                            <option value="10" class="opcao">10h</option>
+                                            <option value="11" class="opcao">11h</option>
+                                            <option value="12" class="opcao">12h</option>
+                                            <option value="13" class="opcao">13h</option>
+                                            <option value="14" class="opcao">14h</option>
+                                            <option value="15" class="opcao">15h</option>
+                                            <option value="16" class="opcao">16h</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="horarioColetaSabado">
+                                    Selecione o horário em que deseja realizar sua coleta: *<br>
+                                    <div class="input-group my-3">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text">Horário</label>
+                                        </div>
+                                        <select class="custom-select seletor horario1">
+                                            <option value="selecionar1" selected class="opcao">Selecione</option>
+                                            <option value="6" class="opcao">6h</option>
+                                            <option value="7" class="opcao">7h</option>
+                                            <option value="8" class="opcao">8h</option>
+                                            <option value="9" class="opcao">9h</option>
+                                            <option value="10" class="opcao">10h</option>
+                                            <option value="11" class="opcao">11h</option>
+                                            <option value="12" class="opcao">12h</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="button" id="enviar" class="btn btn-outline-primary" title="Selecione uma opção para encerrar sua solicitação">Enviar</button>
+                            <progress class="progressbar"></progress>
+                            <span class="invalido"><small>Você possui campos com valores inválidos.<br><br></small></span>
+                        </form>
+                    </fieldset>
+                </div>
+                <div class="fieldset p-5 mb-5 text-center agradecimento" style="max-width: 95%;">
+                    <h1 class="lead" style="font-size: 2.5rem; font-weight: 380 !important;">
+                        Agradecemos pela preferência.
+                    </h1>
+                    <p class="py-5">Sua solicitação de atendimento foi enviada ao laboratório. <br>Nossa repceção entrará em contato a seguir para confirmar os detalhes do seu agendamento.</p>
+                </div>
+            </div>
+            <br><br>
+        </div>
+    </div>
+        <!--FOOTER-->
+        <div class="row">
+            <div class="col-lg-12">
+                <footer>
+                    <div class="conteudo">
+                        <p>Laboratório Prolab &copy | All Rights Reserved </p>
+                        <ul>
+                            <li><a href="https://api.whatsapp.com/message/5Y67HF2JSJW3I1" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="https://www.instagram.com/laboratorioprolabubj/" target="_ablank"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.facebook.com/Laborat%C3%B3rio-Prolab-Ubajara-114600763661039" target="_ablank"><i class="fab fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!--FINAL FOOTER-->
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </div>
+</body>
+</html>

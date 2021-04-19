@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--OS REQUISITOS ESPECÍFICOS:
+        jQuery Scroll suave - HTML Index - linha 56 a 58. Arquivo JS externo - linha 3 a linha 21;
+        Validação de CNPJ - Página "form.html" (Agende sua coleta) - Arquivo JS externo - linha 184 a 256;
+        FOOTER em CSS - HTML Index - linha 133 a 142 - Arquivo CSS extermo - 136 a 162;
+        Aside HTML - Index - linha 103 a 126;
+        Articles HTML - Página "quem-somos.html" (Sobre nós) - linha 117 a 156 (usado múltiplos articles);
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório Prolab - Quem somos</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="font/css/all.css">
+    <script src="jquery.script/jquery-3.6.0.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body class="lead">
+    <header id="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a href="index.html" class="navbar-brand"><img src="imgs/logo-banner.png" id="logo"></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao3">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars menuHamburguer"></i></span>
+            </button>
+            <div id="navegacao3" class="collapse text-right navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html"class="nav-link active">Home</a>
+                    </li>
+                    <li  class="nav-item">
+                        <a href="quem-somos.html" class="nav-link">Sobre nós</a>
+                    </li>
+                    <li  class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Serviços</a>
+                        <div class="dropdown-menu mt-3">
+                            <a href="form.html" class="dropdown-item item-menu">Agende sua coleta</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="exame.html" class="dropdown-item item-menu">Acesse seu exame</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Pesquise">
+                        <div class="input-group-append">
+                            <button id="searchbtn" class="btn input-group-text"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <!--SCROLL SUAVE PARA O TOPO-->
+    <a href="#cabecalho" class="scroll">
+        <div id="botaoScroll" class="mr-2" title="Retorne ao topo"><i class="fas fa-arrow-up"></i></div>
+    </a>
+    <!--FIM SCROLL SUAVE PARA O TOPO-->
+    <div class="container-fluid">
+        <div class="row sobreNos mt-4">
+            <div class="col-lg-8 p-5 text-justify  my-auto">
+                <h1 class="display-4 pl-3" style="font-weight: 350;">Sobre a Prolab</h1>
+                <hr style="width: 40%; margin-left: 0;">
+                <div class="pl-3 pt-5">
+                    <p>Nosso intuito é trazer um novo conteito em laboratório de análises clínicas. Inaugurado em julho de 2020, 
+                        o Prolab veio para proporcionar segurança à Ubajara-Ce, garantindo melhor atendimento e resultado do mercado.
+                        <p>Nossa missão é, antes de mais nada, trazer momentos humanizados para todos os nossos pacientes.
+                            Somos um laboratório capacitado para atendimento em <b>cabine</b> e <b>domicílio</b>, de acordo com a necessidade dos nossos pacientes.</p>
+                        <p>Pesquisamos a fundo as reais necessidades e déficts do nosso setor. Por isso, desenvolvemos uma forma de pensar 
+                            totalmente nova para atender ao público infantil, trabalhando de forma dinâmica e encorajadora.
+                            Dessa forma, podemos evitar traumas e conscientizar pacientes infantis da importância de seus exames.</p>
+                
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div id="carousel-legenda" class="carousel slide" data-ride="carousel">
+                    <!--INDICADORES-->
+                    <ol class="carousel-indicators mx-auto">
+                        <li data-target="#carousel-controles" data-slide-to="1"></li>
+                        <li data-target="#carousel-controles" data-slide-to="2"></li>
+                        <li data-target="#carousel-controles" data-slide-to="3"></li>
+                        <li data-target="#carousel-controles" data-slide-to="4"></li>
+                    </ol>
+                <div class="carousel-inner "><!--INICIO CAROUSEL-INNER-->
+                    <div class="carousel-item active">
+                        <img class="img-fluid carrossel" src="imgs/carrossel1.jpeg">
+                
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid  carrossel" src="imgs/carrossel2.jpeg">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid  carrossel" src="imgs/carrossel3.jpeg">
+                    
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid  carrossel" src="imgs/carrossel4.jpeg">
+                    </div>
+                
+                </div><!--FIM DIV CAROUSEL-INNER-->
+                <!--CONTROLES NEXT E PREV NO CAROUSEL-->
+                <a href="#carousel-legenda" class="carousel-control-prev controle" data-slide="prev">
+                    <i class="fas fa-chevron-left" style="font-size: 1.8rem;"></i>
+                </a> 
+                <a href="#carousel-legenda" class="carousel-control-next controle" data-slide="next">
+                    <i class="fas fa-chevron-right" style="font-size: 1.8rem;"></i>
+                </a> 
+                </div><!--FIM DIV CAROUSEL-SLIDE-->
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col mb-5">
+                <h1 class="display-4 text-center pt-5" style="font-weight: 350;">Coleta Infantil</h1>
+                <hr style="width: 40%">
+                <p class="text-justify mx-auto py-4" style="width: 80%;">Todos os nossos pacientes infantis são pequenos heróis e, por isso, recebem ao final da coleta o <b>certificado de coragem</b>. Acreditamos no reforço positivo à exames, coletas e consultas.
+                    Por isso, nossa equipe trabalha de forma espacial com pacientes infantis para que exames se tornem algo divertido e recompensador, ao invés de assustador. 
+                </p>
+            </div>  
+        </div>
+        <div class="row text-justify card-column">
+            <div class="col-lg-4">
+                <section class="card-deck primeiro-card">
+                    <article class="card p-3">
+                        <img src="imgs/coleta-infantil.jpg" class="img-fluid card-img-top mx-auto" alt="Coleta infantil">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase pl-2">Coleta infantil</h5>
+                            <p class="card-text p-2">Atendimento humanizado, visando proporcionar aceitação e evitar estresses ao paciente no momento da coleta.</p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            <div class="col-lg-4">
+                <section class="card-deck primeiro-card">
+                    <article class="card p-3">
+                        <img src="imgs/coleta-infantil2.jpeg" class="img-fluid card-img-top mx-auto" alt="Coleta infantil">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase pl-3">Coleta infantil</h5>
+                            <p class="card-text pl-3">Após realização de procedimento de coleta, irmãos são contemplados com nosso <b>Certificado da Coragem</b> como reforço positivo.</p>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            <div class="col-lg-4">
+                <section class="card-deck primeiro-card">
+                    <article class="card p-3">
+                        <img src="imgs/coleta-infantil3.jpeg" class="img-fluid card-img-top mx-auto" alt="Coleta infantil">
+                        <div class="card-body">
+                            <h5 class="card-title text-uppercase pl-2">Coleta infantil</h5>
+                            <p class="card-text">Atendimento a bebês com capacitação e treinamento adequados. É visível que não há sinal de medo, estresse ou dor.</p>
+                        </div>
+                    </article>
+                </section>
+            </div>          
+        </div>
+    <hr>
+        <div class="row mb-5">
+            <div class="col-lg-6 mx-auto">
+                <iframe width=100% height=100% frameborder=1px src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.7992441853125!2d-40.923931647571386!3d-3.853221210219859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x794cafc4dfdb779%3A0x52cb73892f99e8c2!2sR.%20Prud%C3%AAncio%20Furtado%2C%20211%2C%20Ubajara%20-%20CE%2C%2062350-000!5e0!3m2!1spt-BR!2sbr!4v1618340599761!5m2!1spt-BR!2sbr;output=embed"></iframe>            
+            </div>    
+            <div class="col-lg-5 text-center my-5">
+                    <h4 class="mt-4">Endereço</h4>
+                    <hr style="width: 40%">
+                    <address>Rua Prudêncio Furtado, N°211 - Centro - Ubajara /CE</address>
+                    <h4 class="mt-4">Contato</h4>
+                    <hr style="width: 40%;"> 
+                    <span><b>Telefone:</b> (88) 99809-9423 / (88) 99833-9633 <br>
+                        <b>Email:</b> laboratorioprolabubj@hotmail.com
+                    </span>
+                    <h4 class="mt-4">Horários de Atendimento</h4>
+                    <hr style="width: 40%">
+                    <span>
+                        <b>Segunda a Sexta:</b> Das 6h00 - 17h00 <br>
+                    <b>  Sábado:</b> Das 6h00 - 13h00
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col col-12">
+            <footer>
+                <div class="conteudo">
+                    <p>Laboratório Prolab &copy | All Rights Reserved </p>
+                    <ul>
+                        <li><a href="https://api.whatsapp.com/message/5Y67HF2JSJW3I1" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                        <li><a href="https://www.instagram.com/laboratorioprolabubj/" target="_ablank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/Laborat%C3%B3rio-Prolab-Ubajara-114600763661039" target="_ablank"><i class="fab fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
